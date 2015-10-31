@@ -1,0 +1,798 @@
+@CHARSET "UTF-8";
+
+/************************************************************************
+ * GLOBAL STYLES:
+ * .body:
+ *   background-color: Global background color
+ *   color: Global text color
+ *   font-*: Global font size and family
+ ************************************************************************/
+body {
+	margin: 0px;
+	/*background-image: url("../images/o.png") repeat-y center top scroll; // Uncomment and replace this with a similar image */
+	background-color: #78CCEB;
+	color: #666666;
+	font-size: 10px;
+	font-family: "Tahoma",sans-serif;
+}
+
+a { text-decoration: none; color: #3B5998; }
+a:hover { text-decoration: none; color: #3B5998; }
+
+/*************************************************************************
+ * PAGE STYLES:
+ * #page:
+ *   background-color: Background color of the page DIV
+ *   border-*: Border on either side of the page, used with .body background-image
+ *   margin-top: Blank space at the top of the page
+ *   margin-left, margin-right: Aligns the page DIV in the center
+ *   padding: Pads the page with the given size
+ *   width: Size of the page DIV
+ *
+ *************************************************************************/
+#page {
+	background-color: white;
+
+	min-height: 500px;
+	border-left: 0px solid #666666;
+	border-right: 0px solid #666666;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	width: 960px;
+}
+
+/************************************************************************
+ * LOGO STYLES:
+ * #logo
+ *   width: Size of the LOGO DIV
+ *   height: Height of the LOGO DIV, usually same as LOGO image height
+ *   margin-bottom: Space to the elements below the logo
+ *   border-bottom: Horizontal Line below Logo
+ *   color: Normal text inside the Logo DIV
+ *   font-size: The size of the Station Name Text
+ * #logo img
+ *    Align all images in the LOGO DIV vertically in the middle
+ *    No borders for any images inside the LOGO DIV
+ *
+ ************************************************************************/
+#logo {
+	width: 100%;
+	height: 89px;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-bottom: 20px;
+	margin-right: 0px;
+
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+
+	border-bottom: 1px solid black;
+	color: #3B5998;
+	font-family: Arial,Sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+#logo img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+/************************************************************************
+ * NAVIGATION STYLES:
+ * #navigation:
+ *   Positions the navigation menu
+ *
+ * #navigation dl:
+ *   background: Navigation area background color
+ *   width: Width of the Navigation Menu
+ *
+ * #navigation dl dt:
+ *   border-bottom: White line below the Header Text in the menu
+ *   color: Header Text Color
+ *   font-size: Header Text Size
+ *
+ * #navigation dl dd:
+ *   background-color: Background colors of items in the menu
+ *   color: Menu text color
+ *   font-size: Header Text Size
+ *   border-bottom: White line below the Text in the menu
+ *
+ * #navigation dl dd a:
+ * Styling on hover
+ *
+ *
+ ************************************************************************/
+#navigation {
+	float: left;
+	clear: left;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+#navigation dl {
+	background: #6699CC;
+	margin: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	width: 150px;
+}
+
+#navigation dl dt {
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 10px;
+}
+
+#navigation dl dd {
+	vertical-align: middle;
+	font-size: 12px;
+	background-color: #4477AA;
+	border-bottom: 1px solid white;
+	color: white;
+	margin: 0px;
+}
+
+#navigation dl dd a,
+#navigation dl dd a:visited {
+	background-color: #4477AA;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	background-attachment: scroll;
+	height: 20px;
+	color: white;
+	display: block;
+	text-decoration: none;
+	width: 140px;
+
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+}
+
+#navigation dl dd a:hover {
+	background-color: #225588;
+	background-repeat: no-repeat;
+	background-position: 11px 10px;
+	background-attachment: scroll;
+
+	color: #99CCFF;
+}
+
+#navigation dl dd img {
+	vertical-align: middle;
+	border: 0px;
+	max-width:20px;
+	max-height:20px;
+}
+
+/************************************************************************
+ * DEDICATION STYLES:
+ * #dedication:
+ *   Positions the dedication menu
+ *
+ * #dedication dl:
+ *   background: Currently Playing Small area background color
+ *   width: Width of the Currently Playing Small Menu
+ *
+ * #dedication dl dt:
+ *   border-bottom: White line below the Header Text in the menu
+ *   color: Header Text Color
+ *   font-size: Header Text Size
+ *
+ * #dedication dl dd:
+ *   background-color: Background colors of items in the menu
+ *   color: Menu text color
+ *   font-size: Header Text Size
+ *   border-bottom: White line below the Text in the menu
+ *
+ * #dedication dl dd a:
+ * Styling on hover
+ *
+ *
+ ************************************************************************/
+#dedication {
+	float: left;
+	clear: left;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+#dedication dl {
+	background: darkblue;
+	margin: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	width: 150px;
+}
+
+#dedication dl dt {
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 10px;
+}
+
+#dedication dl dd {
+	font-size: 12px;
+	background-color: #4477AA;
+	border-bottom: 1px solid white;
+	color: white;
+	margin: 0px;
+	padding: 5px;
+}
+
+#dedication dl dd a,
+#dedication dl dd a:visited {
+	background-color: #4477AA;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	background-attachment: scroll;
+
+	color: white;
+	display: block;
+	text-decoration: none;
+	width: 140px;
+
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+}
+
+#dedication dl dd a:hover {
+	background-color: #6699CC;
+	background-repeat: no-repeat;
+	background-position: 11px 10px;
+	background-attachment: scroll;
+
+	color: #99CCFF;
+}
+
+#dedication dl dd img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+/************************************************************************
+ * TOP REQUESTS STYLES:
+ *
+ *
+ ************************************************************************/
+#top_requests {
+	float: left;
+	clear: left;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+#top_requests dl {
+	background: #6699CC;
+	margin: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	width: 150px;
+}
+
+#top_requests dl dt {
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 10px;
+}
+
+#top_requests dl dd {
+	font-size: 12px;
+	background-color: #4477AA;
+	background-repeat: repeat;
+	background-position: 0px 0px;
+	background-attachment: scroll;
+
+	border-bottom: 1px solid white;
+	color: white;
+	font-size: 1em;
+	margin: 0px;
+	padding: 0px;
+}
+
+#top_requests dl dd a,
+#top_requests dl dd a:visited {
+	background-color: #4477AA;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	background-attachment: scroll;
+
+	color: white;
+	display: block;
+	text-decoration: none;
+	width: 140px;
+
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+}
+
+#top_requests dl dd a:hover {
+	background-color: #6699CC;
+	background-repeat: no-repeat;
+	background-position: 11px 10px;
+	background-attachment: scroll;
+	color: #99CCFF;
+}
+
+#top_requests dl dd img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+/************************************************************************
+ * PARTNER LINKS STYLES:
+ *
+ *
+ *
+ ************************************************************************/
+#partner-links {
+	text-align: center;
+	width: 150px;
+	float: left;
+	clear: left;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/************************************************************************
+ * CURRENTLY PLAYING STYLES:
+ *
+ *
+ *
+ ************************************************************************/
+
+th.links {
+	width: 90px;
+}
+
+#listener_count
+{
+	float:right;
+	font-size: 12px;
+        font-weight: normal;
+	margin: 10px;
+}
+
+#currently-playing-artist
+{
+	font-size: 16px;
+}
+
+#currently-playing-title
+{
+	font-size: 18px;
+}
+
+#currently-playing-duration
+{
+	font-size: 18px;
+}
+
+#currently_playing_wrapper {
+	margin-top: 0px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	clear: none;
+}
+
+#currently_playing {
+	background: #6699CC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#currently_playing table {
+	width: 100%;
+	background: transparent;
+	border-spacing: 0px;
+}
+
+#currently_playing th {
+	padding-bottom: 10px;
+}
+
+#currently_playing thead tr {
+	font-size: 14px;
+	font-weight: bold;
+	background: #6699CC;
+	color: white;
+}
+
+#currently_playing tbody tr {
+	color: #5F5C57;
+	font-size: 12px;
+	font-weight: bold;
+	overflow: hidden;
+	height: 30px;
+	background-color: #F0F0F0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+#currently_playing td,
+#currently_playing th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#currently_playing img {
+	border: 0px;
+	text-align: center;
+}
+
+#cpPictureMainSong {
+	display: none;
+}
+
+/************************************************************************
+ * COMING UP STYLES:
+ * #coming-up:
+ *   Positions the coming-up menu
+ *
+ * #coming-up dl:
+ *   background: COMING UP area background color
+ *   width: Width of the COMING UP Menu
+ *
+ * #coming-up dl dt:
+ *   border-bottom: White line below the Header Text in the menu
+ *   color: Header Text Color
+ *   font-size: Header Text Size
+ *
+ * #coming-up dl dd:
+ *   background-color: Background colors of items in the menu
+ *   color: Menu text color
+ *   font-size: Header Text Size
+ *   border-bottom: White line below the Text in the menu
+ *
+ * #coming-up dl dd a:
+ * Styling on hover
+ *
+ *
+ ************************************************************************/
+#coming-up_wrapper {
+	margin-top: 0px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	clear: none;
+}
+
+#coming-up {
+	background: #6699CC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#coming-up table {
+	background: transparent;
+	border-spacing: 0px;
+	width: 100%;
+}
+
+#coming-up table th {
+	padding-bottom: 10px;
+}
+
+#coming-up table thead tr {
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#coming-up table tbody tr {
+	color: white;
+	font-size: 12px;
+	background-color: #4477AA;
+}
+
+#coming-up table td,
+#coming-up table th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#coming-up table tbody tr div {
+	width: 235px;
+	line-height: 20px;
+	height: 24px;
+
+	float: left;
+
+	background-color: #4477AA;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+	background-attachment: scroll;
+
+	color: white;
+
+	overflow: hidden;
+	margin: 5px;
+}
+
+#coming-up table tbody tr span {
+	font-size: 18px;
+	line-height: 24px;
+	padding-right: 5px;
+}
+
+#coming-up table tbody tr a,
+#coming-up table tbody tr a:visited {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 12px;
+	color: white;
+}
+
+#coming-up table tbody tr a:hover {
+	background-repeat: no-repeat;
+	background-position: 11px 10px;
+	background-attachment: scroll;
+
+	color: #99CCFF;
+}
+
+#coming-up table tbody tr img {
+	vertical-align: middle;
+	border: 0px;
+}
+
+#coming-up table tbody tr span.comingIndex {
+	float:left;
+	margin: 3px;
+}
+
+
+/************************************************************************
+ * RECENTLY PLAYED:
+ *
+ *
+ *
+ ************************************************************************/
+#recently_played_wrapper {
+	margin-top: 0px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	clear: none;
+}
+
+#recently_played {
+	background: #6699CC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#recently_played table {
+	background: transparent;
+	border-spacing: 0px;
+	width: 100%;
+}
+
+#recently_played table th {
+	padding-bottom: 10px;
+}
+
+#recently_played table thead tr {
+	font-size: 14px;
+	font-weight: bold;
+	background: #6699CC;
+	color: white;
+}
+
+#recently_played table tbody tr {
+	color: #5F5C57;
+	font-weight: bold;
+	font-size: 12px;
+	overflow: hidden;
+	height: 60px;
+}
+
+#recently_played table td,
+#recently_played table th {
+	padding-top: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.recently_played_odd {
+	background-color: #F0F0F0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.recently_played_even {
+	background-color: #DADADA;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+#recently_played table img {
+	border: 0px;
+}
+
+.rpPicture {
+	display: none;
+}
+
+/************************************************************************
+ * FOOTER STYLES:
+ *
+ *
+ *
+ ************************************************************************/
+#footer {
+	width: 100%;
+	margin-top: 50px;
+	padding-top: 10px;
+
+	border-top: 1px solid black;
+	clear: both;
+	text-align: center;
+}
+
+.error {
+	border: 1px solid red;
+	padding: 10px;
+	background: #FFEEEE;
+	margin: 10px;
+}
+
+.success {
+	border: 1px solid green;
+	padding: 10px;
+	background: #EEFFEE;
+	margin: 10px;
+}
+
+/************************************************************************
+ * PLAYLIST:
+ *
+ *
+ *
+ ************************************************************************/
+
+th.links {
+	width: 170px;
+}
+
+#playlist {
+	margin-top: 0px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	clear: none;
+}
+
+#playlist_wrapper {
+	background: #6699CC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#playlist table {
+	background: transparent;
+	border-spacing: 0px;
+	width: 100%;
+}
+
+#playlist table th {
+	padding-bottom: 10px;
+}
+
+#playlist table thead tr {
+	font-size: 14px;
+	font-weight: bold;
+	background: #6699CC;
+	color: white;
+}
+
+#playlist table tbody tr {
+	color: #5F5C57;
+	font-weight: bold;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+#playlist table td,
+#playlist table th {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#td-playlist-paging
+{
+	padding: 5px;
+	margin: 5px;
+	height: 10px;
+	text-align: center;
+}
+
+.playlist_odd {
+	background-color: #F0F0F0;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.playlist_even {
+	background-color: #DADADA;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+#playlist table img {
+	border: 0px;
+}
+
+/************************************************************************
+ * SEARCH:
+ *
+ *
+ *
+ ************************************************************************/
+
+#search {
+	margin-top: 0px;
+	margin-left: 180px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	clear: none;
+	background: #6699CC;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+
+#search table {
+	width: 100%;
+}
+
+#search .characterButton {
+	padding: 0;
+	background: none;
+	border: none;
+	color: #3B5998;
+	font-weight: bold;
+}
+
+#search .characterButton:hover {
+	text-decoration: underline;
+	color: white;
+	cursor: pointer;
+}
+
+#search #activeCharacter {
+	color:white;
+}

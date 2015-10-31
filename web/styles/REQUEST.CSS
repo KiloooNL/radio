@@ -1,0 +1,79 @@
+body {
+	background: black;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+#page {
+	width: 500px;
+}
+
+div#pictureAndLinks {
+	float: right;
+	position: relative;
+}
+
+div#pictureAndLinks img.picture {
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+div#pictureAndLinks img.request {
+	position: absolute;
+	top: 160px;
+	right: 0;
+}
+
+div#pictureAndLinks img.buy {
+	position: absolute;
+	top: 160px;
+	right: 80px;
+}
+
+dl {
+	font-size: 12px;
+}
+
+dl dt {
+	font-weight: bold;
+	width: 70px;
+	float: left;
+	clear: left;
+	text-align: right;
+	height: 25px;
+}
+
+dl dd {
+	font-weight: normal;
+	float: left;
+	margin-left: 10px;
+	padding: 0;
+	width: 260px;
+}
+
+dl dd.broad {
+	width: 410px;
+}
+
+div.spacer {
+	clear: both;
+}
+
+pre {
+	font-family: sans-serif;
+}
+
+#dedicationMessage {
+	font-style: italic;
+}
+
+#dedicationName {
+	margin-bottom: 10px;
+}
+

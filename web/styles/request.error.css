@@ -1,0 +1,12 @@
+body {
+	background: black;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+#page {
+	width: 500px;
+	min-height: 0;
+}
