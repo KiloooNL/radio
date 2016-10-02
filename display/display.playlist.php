@@ -1,10 +1,10 @@
 <?php require_once('display.header.php'); ?>
-
+		
 			<!-- BEGIN:SEARCH -->
 			<div id="search">
 			<form method="get" action="playlist.php" name="searchParameters">
 			Search: <?php InputText('search', $search, '',20); ?>
-			by: <?php InputCombo('fields', $search_fields, "0", "All,Title,Artist,Genre", '0,t,a,g', ""); ?>
+			by: <?php InputCombo('fields', $search_fields, "0", "All,Title,Artist,Album,Genre", '0,t,a,album,g', ""); ?>
 			<input type="submit" value="Go" name="B1" />
 			Display <?php InputCombo('limit', $limit, 25, '5,10,25,50,100', "", "document.forms.searchParameters.submit();"); ?> results
 
@@ -66,9 +66,9 @@
 								&nbsp;[ Showing <?php echo "$first to $last of $cnt"; ?> ] &nbsp;
 								<?php 
 								// FIX THIS!!!
-								//if(($start+$limit) < $cnt) { 
+								if(($start+$limit) < $cnt) { 
 								echo $nextlnk; 
-								//} ?>
+								} ?>
 							<?php }?>
 							</td>
 						</tr>
@@ -128,9 +128,9 @@
 									<?php if($start > 0) { echo $prevlnk; } ?>
 									&nbsp; [ Showing <?php echo "$first to $last of $cnt"; ?> ] &nbsp;
 									<?php
-									//if(($start+$limit) < $cnt) { 
+									if(($start+$limit) < $cnt) { 
 									echo $nextlnk; 
-									//} ?>
+									} ?>
 								<?php } ?>
 								</td>
 							</tr>
@@ -140,7 +140,7 @@
 			</div>
 			<!-- END:PLAYLIST -->
 
-
+		
 		<?php require_once('display.footer.php'); ?>
 
 		</div>

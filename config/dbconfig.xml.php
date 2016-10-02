@@ -2,9 +2,9 @@
 <CONFIG application="SAM" version="3.4.2">
 	<Database>
 		<Driver>MYSQL</Driver>
-		<Host>localhost</Host>
+		<Host>192.168.1.146</Host>
 		<Port>3306</Port>
-		<Database>db</Database>
+		<Database>SAMDB</Database>
 		<Username>user</Username>
 		<Password>pass</Password>
 	</Database>

@@ -7,9 +7,19 @@
 				<div id="currently_playing">
 					<table cellpadding="0" cellspacing="0">
 						<thead>
-							<tr><embed height="50" width="200" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="valid_sample_rate=true&amp;external_url=
-http://192.168.1.145:8000/listen.pls?sid=1" type="application/x-shockwave-flash" wmode="transparent" allowscriptaccess="always" quality="low" src="http://www.somewebsite.com/flashplayer.swf"/>
-								<th align="left" style="width: 170px;">
+							<tr>
+							<!-- EXTRACT THIS SECTION -->
+							<object id="fmp256" type="application/x-shockwave-flash" data="minicaster.swf" width="180" height="70">
+							  <param name="movie" value="/radio/playlist/minicaster.swf" />
+							  <param name="wmode" value="transparent" />
+							   <div class="stirfry">
+							   <h1>Radio Web Player</h1>
+							   <p>To listen you must <a href="http://www.macromedia.com/go/getflashplayer/" 
+							   title="Click here to install the Flash browser plugin from Macromedia">install Flash Player</a></p>
+							   </div>
+							</object>
+							<!-- END OF EXTRACT -->
+							<th align="left" style="width: 170px;">
 									Currently Playing
 								</th>
 								<th align="center">
@@ -96,6 +106,7 @@ http://192.168.1.145:8000/listen.pls?sid=1" type="application/x-shockwave-flash"
 										foreach ($comingSongs as $comingSong): ?>
 										<div>
 											<?php if($doCounter) : ?><span class="comingIndex"><?php echo $counter++;?></span><?php endif; ?>
+											<img src="<?php echo $comingSong->picture; ?>" width="35" height="35" play_count='<?php echo $comingSong->count_played; ?>'/>
 											<a href="javascript:songinfo(<?php echo $comingSong->ID; ?>)" title="<?php echo $comingSong->artist_title; ?>">
 												<?php if(!empty($comingSong->artist)) : ?><?php echo $comingSong->artist; ?><?php endif; ?> - <?php echo $comingSong->title; ?>
 											</a>

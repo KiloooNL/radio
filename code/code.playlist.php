@@ -6,6 +6,7 @@ include_once('classes/class.song.php');
 if (ALLOW_REQUESTS) {
 	// An array of song objects with the top requested songs
 	$topRequestedSongs = Song::getTopRequestedSongs();
+	$topPlayedSongs    = Song::getTopPlayedSongs();
 }
 
 $start = Def('start', 0);	// Where the playlist must start
@@ -79,11 +80,11 @@ if ($cnt > 0) {
 	$prev = max(0, $start - $limit);
 	
 	if ($start > 0) {
-		$prevlnk = "<a href='?start=$prev&limit={$limit}&character=$character&search=$searchstr&fields=$search_fields'>&lt;&lt; Previous</a>";
+		$prevlnk = "<a href='?start=$prev&limit={$limit}&character=$character&search=$searchstr&fields=$search_fields'>&lt;&lt; Previous Page</a>";
 	}
 
 	$tmp = ($start + $limit);
 	if ($tmp < $cnt) {
-		$nextlnk = "<a href='?start=$tmp&limit={$limit}&character=$character&search=$searchstr&fields=$search_fields'>Next &gt;&gt;</a>";
+		$nextlnk = "<a href='?start=$tmp&limit={$limit}&character=$character&search=$searchstr&fields=$search_fields'>Next Page &gt;&gt;</a>";
 	}
 }

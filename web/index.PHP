@@ -36,13 +36,13 @@
 		}
 	   
 		/* Usually it is:
-		if (Visit("http://192.168.1.242:8000")) {
+		if (Visit("http://192.168.1.146:8000")) {
 				//Results();
 				require_once("playing.php");
 		} 
 		However due to the fact I can't always run
 		ShoutCAST! it is currently this, instead: */
-		if (Visit("http://192.168.1.145")){
+		if (Visit("http://192.168.1.146")){
 				//Results();
 				require_once("playing.php");
 		} 
@@ -50,12 +50,4 @@
 				//Results();
 				require_once("offline.php");
 		} 
-?>
-
-
-<?php
-
-//Open default page - playing.php
-//require_once('playing.php');
-
 ?>

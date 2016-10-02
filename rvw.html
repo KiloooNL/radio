@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<script type="text/javascript">
+function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+window.onload = function()
+{
+    var radio = document.getElementById("myRadio");
+    radio.src = get('url');
+    radio.volume = get('volume');
+};
+</script> 
+</head>
+<body> 
+<audio autoplay id="myRadio" src="" controls>
+</audio>
+</body> 
+</html>

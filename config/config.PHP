@@ -19,7 +19,7 @@ date_default_timezone_set('Australia/Adelaide');
 ## Station general details					##
 ## ======================================== ##
 define('STATION_NAME', 'KiloooNL\'z Radio Station');
-define('STATION_EMAIL', ''); //Leave blank if you do not wish to publish your email address!
+define('STATION_EMAIL', 'sktfreak-klz-@hotmail.com'); //Leave blank if you do not wish to publish your email address!
 define('STATION_LOGO', 'images/logo.png');
 
 /*
@@ -29,7 +29,7 @@ STATION_ID
 	This is required to make the listen links on the website to work.
 	Follow these steps to set up your station: http://support.spacialaudio.com/wiki/Listing_on_Audiorealm
 */
-define('STATION_ID', 0);
+define('STATION_ID', 142277);
 
 
 ## ============================================================ ##
@@ -61,13 +61,30 @@ define('SHOW_TOP_REQUESTS',	true);
 TOP_COUNT
 	The number of top requests to display
  */
-define('TOP_REQUEST_COUNT',	5);
+define('TOP_REQUEST_COUNT',5);
 
 /*
 REQUEST_DAYS
 	Show the top requests for the last xx days
  */
-define('REQUEST_DAYS', 10);
+define('REQUEST_DAYS', 90);
+
+/*
+SHOW_TOP_TRACKS
+	If true, displays the most played tracks
+*/
+define('SHOW_TOP_TRACKS', true);
+
+/*
+TOP_TRACK_DAYS
+*/
+define('TOP_TRACK_DAYS', 30);
+
+/*
+TOP_TRACKS_COUNT
+	The number of top requests to display
+ */
+define('TOP_PLAYED_COUNT',5);
 
 /*
 SAM_HOST
@@ -78,7 +95,7 @@ SAM_HOST
 	If your IP address changes regularly, rather use DNS to make the "name" static.
 	See http://www.no-ip.com and http://www.dyndns.com/
 */
-define('SAM_HOST', '127.0.0.1');
+define('SAM_HOST', '192.168.1.148'); // ENSURE THIS SERVER IP IS SET IN INDEX.PHP
 
 /*
 SAM_PORT
@@ -130,7 +147,7 @@ COMING_UP_COUNT
 	The number of coming soon songs to display.
 	Set to zero to disable coming up section.
  */
-define('COMING_UP_COUNT', 2);
+define('COMING_UP_COUNT', 4);
 
 /*
 CHECK_INTERVAL

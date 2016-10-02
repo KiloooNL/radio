@@ -58,8 +58,10 @@
 				<dd><?php echo $song->genre; ?></dd>
 				<dt>Links</dt>
 				<dd>
+				  <!-- disable this for now
 				  <a href="<?php echo $song->website; ?>" target="_blank"><img class="request" src="images/home.png" alt="More artist details" title="More artist details" border="0" /></a>
 				  <a href="<?php echo $song->buycd; ?>" target="_blank"><img class="buy" src="images/buy.png" alt="Buy this CD or Track now!" title="Buy this CD or Track now!" border="0" /></a>
+				  -->
 				  <?php if (ALLOW_REQUESTS) : ?>
 				  	<a href="javascript:request(<?php echo $song->ID; ?>);"><img class="request" src="images/request.png" alt="Request this track now!" title="Request this track now!" border="0" /></a>
 				  <?php endif; ?>
@@ -72,6 +74,14 @@
 					<dt>Information</dt>
 					<dd class="broad"><?php echo $song->info; ?></dd>
 				<?php endif; ?>
+				
+					<dt>Play count</dt>
+					<dd>This song has been played 
+					<?php 
+					
+					//if($song->count_played > 1) {
+						echo $song->count_played.' times.';
+					//} else echo 'once.'; ?></dd>
 			</dl>
 
 			<div class="spacer"></div>

@@ -19,4 +19,5 @@ $comingSongs = Song::getComingSongs();
 if (ALLOW_REQUESTS) {
 	// An array of song objects with the top requested songs
 	$topRequestedSongs = Song::getTopRequestedSongs();
+	$topPlayedSongs    = Song::getTopPlayedSongs();
 }

@@ -14,11 +14,29 @@
 		<script type="text/javascript" src="js/jquery-1.4.2.js"></script>
 		<!-- JQuery plugin for Cross-Browser compatible rounding of corners -->
 		<script type="text/javascript" src="js/jquery.corner.js"></script>
+		<script type="text/javascript">
+		// Countdown timer then close window.
+			window.onload == beginCountdown();
+			
+			function beginCountdown(){
+				var count = 3;
+				var countdown = setInterval(function() {
+					document.getElementById('countdownHint').innerHTML = '<h2>Closing window in ' + count + ' seconds.</h2>';
+					if(count == 0) {
+						close(); // close window
+						clearInterval(countdown);
+					}
+					count--;
+				}, 1000);
+			}
+		</script>
 	</head>
 
 	<body>
 
 		<!-- BEGIN:PAGE -->
+		<div id="countdownHint" style="color:red;">
+		</div>
 		<div id="page">
 
 			<h2 class="success">Request successful and should play shortly.</h2>

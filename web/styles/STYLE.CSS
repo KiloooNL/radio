@@ -134,7 +134,7 @@ a:hover { text-decoration: none; color: #3B5998; }
 	font-size: 14px;
 	font-weight: bold;
 	margin: 0px;
-	padding: 10px;
+	padding: 6px;
 }
 
 #navigation dl dd {
@@ -300,7 +300,7 @@ a:hover { text-decoration: none; color: #3B5998; }
 	font-size: 14px;
 	font-weight: bold;
 	margin: 0px;
-	padding: 10px;
+	padding: 6px;
 }
 
 #top_requests dl dd {
@@ -528,7 +528,7 @@ th.links {
 }
 
 #coming-up table tbody tr div {
-	width: 235px;
+	width: 300px; /* original: 235px */
 	line-height: 20px;
 	height: 34px;
 	float: left;

@@ -25,6 +25,8 @@ class Song {
 	public $requestID;
 	public $listeners;
 	public $cnt;
+	public $count_played;
+	public $topPlayedSongs;
 	public $isDedication = false;
 	public $isRequested;
 	public $dedicationName;
@@ -103,7 +105,75 @@ class Song {
 		}
 		return array_slice(self::$songs, 1, HISTORY_COUNT);
 	}
+	
+	############################################
+	#
+	# Custom SQL
+	# -- Get Song Played Count --
+	#
+	# - Adds function to the website to display
+	#	a song's 'number of times played' count.
+	#
+	############################################
+	
+	// Current Song Played Amount
+	public static function getCurrentSongCount() {
+		$db = Database::getInstance();
+		
+		try {
+			$select = $db->select()
+						 ->from(array('s' => 'songlist'),
+								array('s.*',
+									  'count_played' => 's.count_played'))
+						 ->where('count_played = ?', $count_played);
+			$row = $db->fetchRow($select);
 
+			if (!is_null($row)) {
+				$song = new self();
+				$song->setValues($row);
+			}
+			
+		} catch (Zend_Db_Adapter_Exception $ex) {
+			echo "Error returning playcount (line 112 class.song.php).<br />";
+			exit;
+		} return $count_played;
+	} 
+	
+	############################################
+	#
+	# Custom SQL
+	# -- Top Played Songs --
+	#
+	# - Adds function to the website to display
+	#	the most played tracks
+	#
+	############################################
+	
+	// Top Played Songs counter
+	public static function getTopPlayedSongs() {
+		$db = Database::getInstance();
+
+		try {
+			$select = $db->select()
+				->from(array('s' => 'songlist'),
+						array('s.*',
+							  'count_played' => 's.count_played'))
+				->order('count_played DESC') // order by play count
+				->limit(TOP_PLAYED_COUNT);	 // limit by CFG command
+				$songs = $db->fetchAll($select);
+		} catch (Zend_Db_Adapter_Exception $ex) {
+			echo "Please verify database settings.<br />";
+			exit;
+		}
+
+		$topPlayedSongs = array();
+		foreach ($songs as $songKey => $song) {
+			$topPlayedSongs[$songKey] = new self();
+			$topPlayedSongs[$songKey]->setValues($song);
+		}
+		return $topPlayedSongs;
+	}
+	
 	public static function getTopRequestedSongs() {
 		$db = Database::getInstance();
 
@@ -171,10 +241,10 @@ class Song {
 		}
 		
 		//Set search filters
-		$doSearchTitle = (!$search_fields || $search_fields == 't');
-		$doSearchArtist = (!$search_fields || $search_fields == 'a');
-		$doSearchGenre = (!$search_fields || $search_fields == 'g');
-		$doSearchAlbum = !$search_fields;
+		$doSearchTitle = (!$search_fields || $search_fields == 't'); // Title
+		$doSearchArtist = (!$search_fields || $search_fields == 'a'); // Artist
+		$doSearchAlbum = (!$search_fields || $search_fields == 'album'); // Album
+		$doSearchGenre = (!$search_fields || $search_fields == 'g'); // Genre
 
 		$db = Database::getInstance();
 

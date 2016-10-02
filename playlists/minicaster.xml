@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<config version="1T" xmlns="http://www.draftlight.net/dnex/config/ns/1T/">
+<mp3cast>
+<mount>http://14.203.4.88:8000;</mount>
+<website>http://www.bmcstudios.net</website>
+<title>KiloooNL'z Radio Station</title>
+</mp3cast>

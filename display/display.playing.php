@@ -48,7 +48,7 @@
 									<?php if(!empty($currentSong->trackno)) : ?><br /><small>Track #: </small><span id="currently-playing-artist"><?php echo $currentSong->trackno; ?></span><?php endif; ?>
 									<?php if(!empty($currentSong->albumyear)) : ?><br /><small>Year: </small><span id="currently-playing-artist"><?php echo $currentSong->albumyear; ?></span><?php endif; ?>
 									<?php if(!empty($currentSong->genre)) : ?><br /><small>Genre: </small><span id="currently-playing-artist"><?php echo $currentSong->genre; ?></span><?php endif; ?>
-									<br /><small>Number of times played: </small><span id="currently-playing-artist"><?php if(empty($currentSong->count_played)) { $currentSong->count_played++; } echo $currentSong->count_played; ?></span>
+									<br /><small>Number of times played: </small><span id="currently-playing-artist"><?php echo $currentSong->count_played; ?></span>
 
 									<?php if (ALLOW_REQUESTS && $currentSong->isDedication): ?>
 									<!-- BEGIN:DEDICATION -->
@@ -74,7 +74,7 @@
 		<?php endif; ?>
 
 
-			<?php if(is_array($comingSongs) && count($comingSongs)>0) : ?>
+		<?php if(is_array($comingSongs) && count($comingSongs)>0) : ?>
 			<!-- BEGIN:COMING UP -->
 			<div id="coming-up_wrapper">
 				<div id="coming-up">
@@ -95,6 +95,7 @@
 										foreach ($comingSongs as $comingSong): ?>
 										<div>
 											<?php if($doCounter) : ?><span class="comingIndex"><?php echo $counter++;?></span><?php endif; ?>
+											<img src="<?php echo $comingSong->picture; ?>" width="35" height="35" play_count='<?php echo $comingSong->count_played; ?>'/>
 											<a href="javascript:songinfo(<?php echo $comingSong->ID; ?>)" title="<?php echo $comingSong->artist_title; ?>">
 												<?php if(!empty($comingSong->artist)) : ?><?php echo $comingSong->artist; ?><?php endif; ?> - <?php echo $comingSong->title; ?>
 											</a>
@@ -156,12 +157,17 @@
 									<br /><font size="1">Genre: <span id="currently-playing-artist"><?php if(empty($recentSong->genre)) { echo "Other"; } else echo $recentSong->genre; ?></span></font>
 								</td>
 								<td align="center">
+								<!-- Disable this for now.
 									<a href="<?php echo $recentSong->buycd; ?>" target="_blank">
 										<img src="images/buy.png" alt="Buy this CD now!" title="Buy this CD now!" />
 									</a>
 									<a href="<?php echo $recentSong->website; ?>" target="_blank">
 										<img src="images/home.png" alt="Artist homepage" title="Artist homepage" />
 									</a>
+								-->
+								<?php if (ALLOW_REQUESTS) : ?>
+									<a href="javascript:request(<?php echo $recentSong->ID; ?>);"><img class="request" src="images/request.png" alt="Request this track now!" title="Request this track now!" border="0" /></a>
+								<?php endif; ?>
 									<a href="javascript:songinfo(<?php echo $recentSong->ID; ?>)">
 										<img src="images/info.png" alt="Track information" title="Track information" />
 									</a>
