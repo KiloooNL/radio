@@ -1,5 +1,5 @@
 <?php require_once('display.header.php'); ?>
-		
+
 			<!-- BEGIN:SEARCH -->
 			<div id="search">
 			<form method="get" action="playlist.php" name="searchParameters">
@@ -24,7 +24,7 @@
 							for($charVal = ord('A');$charVal <= ord('Z'); $charVal++) {
 								$c = chr($charVal);
 								echo "<td>";
-								echo "<input ".($character == $c? "id='activeCharacter'" : "")." type='submit' name='character' class='characterButton' value='$c' onclick='document.forms.searchParameters.search.value=\"\"' />";
+								echo "<input ".($character == $c ? "id='activeCharacter'" : "")." type='submit' name='character' class='characterButton' value='$c' onclick='document.forms.searchParameters.search.value=\"\"' />";
 								echo "</td>";
 							}
 							?>
@@ -67,7 +67,7 @@
 								<?php 
 								// FIX THIS!!!
 								if(($start+$limit) < $cnt) { 
-								echo $nextlnk; 
+									echo $nextlnk; 
 								} ?>
 							<?php }?>
 							</td>
@@ -140,7 +140,7 @@
 			</div>
 			<!-- END:PLAYLIST -->
 
-		
+
 		<?php require_once('display.footer.php'); ?>
 
 		</div>
