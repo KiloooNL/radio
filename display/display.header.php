@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 	<head>
-		<title>DJ Kilooo'z Radio<?php  if(!empty($currentSong->artist)) { echo ' | '.$currentSong->artist." - ".$currentSong->title;  } ?></title>
+		<title>DJ Kilooo'z Radio<?php  if(isset($currentSong->artist && $currentSong->title)) { echo ' | '.$currentSong->artist." - ".$currentSong->title;  } ?></title>
+		<meta charset="UTF-8">
 		<link rel="shortcut icon" href="/favicon.png" />
 		<!-- General styles of the samPHPweb pages -->
 		<link rel="stylesheet" type="text/css" href="styles/style.css" />
@@ -76,7 +77,7 @@
 			<?php if (ALLOW_REQUESTS && SHOW_TOP_REQUESTS && is_array($topRequestedSongs) && count($topRequestedSongs) > 0): ?>
 			<div id="top_requests">
 				<dl>
-					<dt>Top Requests</dt>
+					<dt>Top Requested</dt>
 					<?php
 						  $counter = 1;
 						  foreach ($topRequestedSongs as $topRequestedSong): ?>
@@ -95,7 +96,7 @@
 			<?php if(SHOW_TOP_TRACKS && is_array($topPlayedSongs) && count($topPlayedSongs) > 0): ?>
 			<div id="top_requests">
 				<dl>
-					<dt>Top Tracks</dt>
+					<dt>Most Played Tracks</dt>
 					<?php
 						$counter = 1;
 						foreach ($topPlayedSongs as $topPlayedSong): ?>
@@ -103,7 +104,7 @@
 						<a href="javascript:songinfo(<?php echo $topPlayedSong->ID; ?>)" title="<?php echo $topPlayedSong->artist_title; ?>">
 						<?php echo $counter++;?>. <?php echo $topPlayedSong->title; ?>
 						<?php if(!empty($topPlayedSong->artist)) : ?><br />&nbsp;&nbsp;&nbsp;&nbsp;by  <?php echo $topPlayedSong->artist; ?><?php endif; ?>
-						(<?php echo $topPlayedSong->count_played; ?> plays)
+						(<?php echo $topPlayedSong->count_played; ?>)
 						</a>
 					</dd>
 					<?php endforeach; ?>
