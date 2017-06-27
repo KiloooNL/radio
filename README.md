@@ -54,3 +54,10 @@ Submit a fork and I'll be glad to review!
 ### Credits & Thanks
 - Main developer - [Ben Weidenhofer](http://www.github.com/KiloooNL)
 - Thanks to [TheJosh](http://www.github.com/TheJosh) for input on the search engine and its functionality
+
+### Screenshots
+Here's a few screenshots of the theme:
+
+![DJ KiloooNL'z Radio](http://i.imgur.com/tPrghUd.png)
+![DJ KiloooNL'z Radio](http://i.imgur.com/mmHKGFk.png)
+![DJ KiloooNL'z Radio](http://i.imgur.com/6T0ZCJZ.png)
